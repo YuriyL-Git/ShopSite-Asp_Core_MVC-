@@ -7,7 +7,7 @@ using ShopSite_Asp_Core_MVC_.Data.Models;
 
 namespace ShopSite_Asp_Core_MVC_.Data.Mocks
 {
-    public class MockCars : IGetCars
+    public class MockCars : IAllCars
     {
         private readonly ICarsCategory _categoryCars = new MockCarsCategory();
 

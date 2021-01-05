@@ -33,7 +33,7 @@ namespace ShopSite_Asp_Core_MVC_
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AppDBContent>(options => options.UseSqlServer(_config.GetConnectionString("DefaultConnection")));
-            services.AddTransient<IGetCars, MockCars>();
+            services.AddTransient<IAllCars, MockCars>();
             services.AddTransient<ICarsCategory, MockCarsCategory>();
 
             services.AddControllersWithViews();

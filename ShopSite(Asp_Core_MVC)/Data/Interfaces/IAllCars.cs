@@ -6,11 +6,11 @@ using ShopSite_Asp_Core_MVC_.Data.Models;
 
 namespace ShopSite_Asp_Core_MVC_.Data.Interfaces
 {
-    public interface IGetCars
+    public interface IAllCars
     {
-        IEnumerable<Car> GetAllCars { get; }
+        IEnumerable<Car> GetAllCarsByCategory { get; }
 
-        IEnumerable<Car> GetFavoriteCars { get; set; }
+        IEnumerable<Car> GetFavoriteCars { get;  }
 
         Car GetCar(int carId);
     }

@@ -10,10 +10,10 @@ namespace ShopSite_Asp_Core_MVC_.Controllers
 {
     public class CarsController : Controller
     {
-        private readonly IGetCars _getCars;
+        private readonly IAllCars _getCars;
         private readonly ICarsCategory _allCarsCategories;
 
-        public CarsController(IGetCars getCars, ICarsCategory allCarsCategories)
+        public CarsController(IAllCars getCars, ICarsCategory allCarsCategories)
         {
             _getCars = getCars;
             _allCarsCategories = allCarsCategories;
