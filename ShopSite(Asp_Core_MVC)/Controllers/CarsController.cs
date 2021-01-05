@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ShopSite_Asp_Core_MVC_.Data.Interfaces;
+using ShopSite_Asp_Core_MVC_.Models;
 
 namespace ShopSite_Asp_Core_MVC_.Controllers
 {
@@ -20,11 +21,11 @@ namespace ShopSite_Asp_Core_MVC_.Controllers
 
         public ViewResult CarList()
         {
-            ViewBag.Category = "Some New";
+            CarListModel carList = new CarListModel();
+            carList.AllCars = _getCars.GetAllCars;
+            carList.CurrentCategory = "Automobiles";
 
-            var allCarsList = _getCars.GetAllCars;
-
-            return View(allCarsList);
+            return View(carList);
         }
     }
 }
