@@ -1,0 +1,9 @@
+﻿@model ShopSite_Asp_Core_MVC_.Data.Models.Car
+
+<div class="col-lg-4">
+    <img class="img-thumbnail" src="@Model.Image" alt="@Model.Name" />
+    <h2>@Model.Name</h2>
+    <p>@Model.ShortDecsription</p>
+    <p>Price: @Model.Price.ToString("C")</p>
+    <p><a class="btn btn-warning href="#">Details</a></p>
+</div>
