@@ -13,6 +13,7 @@ using ShopSite_Asp_Core_MVC_.Data;
 using ShopSite_Asp_Core_MVC_.Data.Interfaces;
 using ShopSite_Asp_Core_MVC_.Data.Mocks;
 using Microsoft.EntityFrameworkCore;
+using ShopSite_Asp_Core_MVC_.Data.Repository;
 using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
 
 namespace ShopSite_Asp_Core_MVC_
@@ -33,8 +34,12 @@ namespace ShopSite_Asp_Core_MVC_
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AppDBContent>(options => options.UseSqlServer(_config.GetConnectionString("DefaultConnection")));
-            services.AddTransient<IAllCars, MockCars>();
-            services.AddTransient<ICarsCategory, MockCarsCategory>();
+
+            services.AddTransient<IAllCars, CarRepository>();
+            services.AddTransient<ICarsCategory, CarCategoryRepository>();
+
+            //services.AddTransient<IAllCars, MockCars>();
+            //services.AddTransient<ICarsCategory, MockCarsCategory>();
 
             services.AddControllersWithViews();
         }
@@ -56,6 +61,8 @@ namespace ShopSite_Asp_Core_MVC_
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
+          //  DBObjects.Initial(app);
         }
     }
 }

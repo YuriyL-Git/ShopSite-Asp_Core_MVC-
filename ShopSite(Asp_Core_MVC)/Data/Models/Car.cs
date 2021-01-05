@@ -21,11 +21,10 @@ namespace ShopSite_Asp_Core_MVC_.Data.Models
 
         public bool IsFavorite { get; set; }
 
-        //quantity of item on storage
         public bool Available { get; set; }
 
         public int CategoryId { get; set; }
 
-        public virtual CarCaterory Category { set; get; }
+        public virtual CarCategory Category { set; get; }
     }
 }

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ShopSite_Asp_Core_MVC_.Data.Models
 {
-    public class CarCaterory
+    public class CarCategory
     {
         public int Id { get; set; }
 

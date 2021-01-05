@@ -8,6 +8,6 @@ namespace ShopSite_Asp_Core_MVC_.Data.Interfaces
 {
     public interface ICarsCategory
     {
-        IEnumerable<CarCaterory> AllCategories { get; }
+        IEnumerable<CarCategory> AllCategories { get; }
     }
 }

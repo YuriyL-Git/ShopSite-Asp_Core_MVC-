@@ -9,14 +9,14 @@ namespace ShopSite_Asp_Core_MVC_.Data.Mocks
 {
     public class MockCarsCategory : ICarsCategory
     {
-        public IEnumerable<CarCaterory> AllCategories
+        public IEnumerable<CarCategory> AllCategories
         {
             get
             {
-                return new List<CarCaterory>
+                return new List<CarCategory>
                 {
-                    new CarCaterory {CategoryName = "Electromobiles", Description = "Modern type of venicles "},
-                    new CarCaterory {CategoryName = "Classic automobiles", Description = "Bensine cars"},
+                    new CarCategory {CategoryName = "Electromobiles", Description = "Modern type of venicles "},
+                    new CarCategory {CategoryName = "Classic automobiles", Description = "Bensine cars"},
 
                 };
 
