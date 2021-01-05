@@ -1,5 +1,4 @@
-﻿
-@model CarListModel
+﻿@model CarListModel
 
     <p></p>
 <h1>All the cars</h1>
@@ -9,7 +8,7 @@
     @{
         foreach (Car car in Model.AllCars)
         {
-          @Html.Partial("AllCars", car)
+          @Html.Partial("AllCars", car);
         }
 
     }
