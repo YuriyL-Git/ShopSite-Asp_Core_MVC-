@@ -5,19 +5,34 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
+using ShopSite_Asp_Core_MVC_.Data;
 using ShopSite_Asp_Core_MVC_.Data.Interfaces;
 using ShopSite_Asp_Core_MVC_.Data.Mocks;
+using Microsoft.EntityFrameworkCore;
+using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
 
 namespace ShopSite_Asp_Core_MVC_
 {
     public class Startup
     {
+        private IConfigurationRoot _config;
+
+        public Startup()
+        {
+            _config= new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("db_settings.json")
+                .Build();
+        }
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<AppDBContent>(options => options.UseSqlServer(_config.GetConnectionString("DefaultConnection")));
             services.AddTransient<IGetCars, MockCars>();
             services.AddTransient<ICarsCategory, MockCarsCategory>();
 
