@@ -6,7 +6,7 @@ using ShopSite_Asp_Core_MVC_.Data.Models;
 
 namespace ShopSite_Asp_Core_MVC_.Data.Interfaces
 {
-    interface ICarsCategory
+    public interface ICarsCategory
     {
         IEnumerable<CarCaterory> AllCategories { get; }
     }

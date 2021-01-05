@@ -1,0 +1,29 @@
+﻿@using ShopSite_Asp_Core_MVC_.Data.Models
+@model IEnumerable<Car>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CarList</title>
+</head> 
+<body>
+<h1>All the cars</h1>
+<h3>@ViewBag.Category</h3>
+@{
+    foreach (var car in Model)
+    {
+        <div>
+            <h2>Model: @car.Name</h2>
+            <p>Price: @car.Price.ToString("C")</p>
+        </div>
+    }
+
+}
+</body>
+</html>
