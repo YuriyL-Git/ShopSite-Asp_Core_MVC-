@@ -17,6 +17,7 @@ namespace ShopSite_Asp_Core_MVC_.Data.Mocks
                 {
                     new CarCategory {CategoryName = "Electromobiles", Description = "Modern type of venicles "},
                     new CarCategory {CategoryName = "Classic automobiles", Description = "Bensine cars"},
+                    new CarCategory {CategoryName = "Retro automobiles", Description = "Old Automobiles"}
 
                 };
 

@@ -25,7 +25,7 @@ namespace ShopSite_Asp_Core_MVC_.Data.Mocks
                         Image = "/img/tesla.png",
                         Price = 45000, IsFavorite = true, 
                         Available = true,
-                        Category = _categoryCars.AllCategories.First()
+                        Category = _categoryCars.AllCategories.Where(x => x.CategoryName == "Electromobiles").First()
                     },
 
                     new Car
@@ -36,7 +36,7 @@ namespace ShopSite_Asp_Core_MVC_.Data.Mocks
                         Image = "/img/ford-fiesta.png",
                         Price = 11000, IsFavorite = false,
                         Available = true,
-                        Category = _categoryCars.AllCategories.Last()
+                        Category = _categoryCars.AllCategories.Where(x => x.CategoryName == "Classic automobiles").First()
                     },
 
                     new Car
@@ -47,7 +47,7 @@ namespace ShopSite_Asp_Core_MVC_.Data.Mocks
                         Image = "/img/bmw-m3.png",
                         Price = 65000, IsFavorite = true,
                         Available = true,
-                        Category = _categoryCars.AllCategories.Last()
+                        Category = _categoryCars.AllCategories.Where(x => x.CategoryName == "Classic automobiles").First()
                     },
                     new Car
                     {
@@ -57,7 +57,7 @@ namespace ShopSite_Asp_Core_MVC_.Data.Mocks
                         Image = "/img/mercedes-benz-c.jpg",
                         Price = 40000, IsFavorite = false,
                         Available = false,
-                        Category = _categoryCars.AllCategories.Last()
+                        Category = _categoryCars.AllCategories.Where(x => x.CategoryName == "Classic automobiles").First()
                     },
                     new Car
                     {
@@ -67,7 +67,28 @@ namespace ShopSite_Asp_Core_MVC_.Data.Mocks
                         Image = "/img/nissan-leaf-s.png",
                         Price = 14000, IsFavorite = true,
                         Available = true,
-                        Category = _categoryCars.AllCategories.First()
+                        Category = _categoryCars.AllCategories.Where(x => x.CategoryName == "Electromobiles").First()
+                    },
+
+                    new Car
+                    {
+                        Name = "Marie Claire",
+                        ShortDecsription = "Old Fachion ",
+                        LongDescription  = "Beauty in avery milimmeter",
+                        Image = "/img/Marie Claire.jpg",
+                        Price = 89000, IsFavorite = true,
+                        Available = true,
+                        Category = _categoryCars.AllCategories.Where(x => x.CategoryName == "Retro automobiles").First()
+                    },
+                    new Car
+                    {
+                        Name = "Cabriolette Norch",
+                        ShortDecsription = "Futuristic retro ",
+                        LongDescription  = "Only fifteen cars in the world",
+                        Image = "/img/Cabriolette-north.jpg.jpg",
+                        Price = 98000, IsFavorite = true,
+                        Available = true,
+                        Category = _categoryCars.AllCategories.Where(x => x.CategoryName == "Retro automobiles").First()
                     }
                 };
 

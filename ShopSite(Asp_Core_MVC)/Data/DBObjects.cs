@@ -12,37 +12,36 @@ namespace ShopSite_Asp_Core_MVC_.Data
 {
     public class DBObjects
     {
-        public static void Initial(IApplicationBuilder app)
+        //Populating the database with initial values from Mock objects
+        public static void Initial(AppDBContent dbContent)
         {
-            AppDBContent dbContent = app.ApplicationServices.GetRequiredService<AppDBContent>();
+            var listOfCars = new MockCars().GetAllCars;
+            var listCategories = new MockCarsCategory().AllCategories;
 
             if (!dbContent.CarCaterory.Any())
-            {
-                dbContent.CarCaterory.AddRange(Categories.Select(c => c.Value));
-            }
-        }
-
-        private static Dictionary<string, CarCategory> category;
-
-        public static Dictionary<string, CarCategory> Categories
-        {
-            get
-            {
-                if (category == null)
                 {
-                    var listCategories = new MockCarsCategory().AllCategories;
-
-
-                    category = new Dictionary<string, CarCategory>();
-
                     foreach (var cat in listCategories)
                     {
-                        category.Add(cat.CategoryName, cat);
+
+                        dbContent.CarCaterory.Add(cat);
                     }
+
                 }
 
-                return category;
-            }
+                if (!dbContent.Car.Any())
+                {
+                    foreach (var car in listOfCars)
+                    {
+
+                        dbContent.Car.Add(car);
+                    }
+
+                }
+
+                dbContent.SaveChanges();
+
         }
+
+        
     }
 }

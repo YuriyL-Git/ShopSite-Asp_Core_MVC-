@@ -6,6 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\img\Cabriolette-north.jpg\**" />
+    <Content Remove="wwwroot\img\Cabriolette-north.jpg\**" />
+    <EmbeddedResource Remove="wwwroot\img\Cabriolette-north.jpg\**" />
+    <None Remove="wwwroot\img\Cabriolette-north.jpg\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="EntityFramework" Version="6.4.4" />
     <PackageReference Include="JSON" Version="1.0.1" />
     <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.7" />
@@ -20,7 +27,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\img\" />
     <Folder Include="wwwroot\js\" />
   </ItemGroup>
 

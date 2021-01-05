@@ -48,7 +48,7 @@ namespace ShopSite_Asp_Core_MVC_
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseDeveloperExceptionPage();
-           
+
             app.UseStatusCodePages();
 
             app.UseStaticFiles();
@@ -62,7 +62,12 @@ namespace ShopSite_Asp_Core_MVC_
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
 
-          //  DBObjects.Initial(app);
+            using (var serviceScope = app.ApplicationServices.CreateScope())
+            {
+                var dbContent = serviceScope.ServiceProvider.GetRequiredService<AppDBContent>();
+
+                DBObjects.Initial(dbContent);
+            }
         }
     }
 }

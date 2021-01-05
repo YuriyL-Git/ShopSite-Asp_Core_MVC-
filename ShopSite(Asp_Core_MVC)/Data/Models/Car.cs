@@ -17,7 +17,7 @@ namespace ShopSite_Asp_Core_MVC_.Data.Models
 
         public string Image { get; set; }
 
-        public ushort Price { get; set; }
+        public int Price { get; set; }
 
         public bool IsFavorite { get; set; }
 
