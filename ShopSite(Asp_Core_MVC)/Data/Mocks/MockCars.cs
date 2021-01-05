@@ -22,7 +22,7 @@ namespace ShopSite_Asp_Core_MVC_.Data.Mocks
                         Name = "Tesla",
                         ShortDecsription = "Fast automobile",
                         LongDescription  = "Beautiful, fast and very quiet automobile",
-                        Image = "https://www.pngkey.com/png/full/802-8024110_attractions-link-tourism-services-m-toyota-corolla-s.png",
+                        Image = "/img/tesla.png",
                         Price = 45000, IsFavorite = true, 
                         Available = true,
                         Category = _categoryCars.AllCategories.First()
@@ -33,7 +33,7 @@ namespace ShopSite_Asp_Core_MVC_.Data.Mocks
                         Name = "Ford Fiesta",
                         ShortDecsription = "Calm and quiet",
                         LongDescription  = "Convenient automobile for city life",
-                        Image = "https://www.pngkey.com/png/full/120-1209183_2018-ford-fiesta-in-hot-pepper-red-metallic.png",
+                        Image = "/img/ford-fiesta.png",
                         Price = 11000, IsFavorite = false,
                         Available = true,
                         Category = _categoryCars.AllCategories.Last()
@@ -44,7 +44,7 @@ namespace ShopSite_Asp_Core_MVC_.Data.Mocks
                         Name = "BMW M3",
                         ShortDecsription = "Stylish and powerful",
                         LongDescription  = "Powerful and convinient automobile",
-                        Image = "https://www.pngkey.com/png/full/430-4307799_2018-bmw-m3-bmw-m3-2018-white.png",
+                        Image = "/img/bmw-m3.png",
                         Price = 65000, IsFavorite = true,
                         Available = true,
                         Category = _categoryCars.AllCategories.Last()
@@ -54,7 +54,7 @@ namespace ShopSite_Asp_Core_MVC_.Data.Mocks
                         Name = "Mersedes C class",
                         ShortDecsription = "Big and comfortable",
                         LongDescription  = "Comfortable auto for city life",
-                        Image = "https://img.mercedes-benz-kiev.com/data/purchase/c-class-coupe/0052600121/mercedes-benz-c-class-coupe-1.jpg",
+                        Image = "/img/mercedes-benz-c.jpg",
                         Price = 40000, IsFavorite = false,
                         Available = false,
                         Category = _categoryCars.AllCategories.Last()
@@ -64,7 +64,7 @@ namespace ShopSite_Asp_Core_MVC_.Data.Mocks
                         Name = "Nissan leaf",
                         ShortDecsription = "Noiseless and economical ",
                         LongDescription  = "Noiseless and economical auto for city life",
-                        Image = "https://www.pngkey.com/png/full/580-5800783_toyota-prius-nissan-leaf-s-2019.png",
+                        Image = "/img/nissan-leaf-s.png",
                         Price = 14000, IsFavorite = true,
                         Available = true,
                         Category = _categoryCars.AllCategories.First()

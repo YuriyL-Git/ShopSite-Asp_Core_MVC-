@@ -21,6 +21,8 @@ namespace ShopSite_Asp_Core_MVC_.Controllers
 
         public ViewResult CarList()
         {
+            ViewBag.Title = "Cars List";
+
             CarListModel carList = new CarListModel();
             carList.AllCars = _getCars.GetAllCars;
             carList.CurrentCategory = "Automobiles";
