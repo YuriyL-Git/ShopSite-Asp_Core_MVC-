@@ -14,6 +14,7 @@ using ShopSite_Asp_Core_MVC_.Data.Interfaces;
 using ShopSite_Asp_Core_MVC_.Data.Mocks;
 using Microsoft.EntityFrameworkCore;
 using ShopSite_Asp_Core_MVC_.Data.Repository;
+using ShopSite_Asp_Core_MVC_.Models;
 using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
 
 namespace ShopSite_Asp_Core_MVC_
@@ -41,7 +42,13 @@ namespace ShopSite_Asp_Core_MVC_
             //services.AddTransient<IAllCars, MockCars>();
             //services.AddTransient<ICarsCategory, MockCarsCategory>();
 
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped(sp => ShopCart.GetCart(sp));
+
             services.AddControllersWithViews();
+
+            services.AddMemoryCache();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,6 +59,8 @@ namespace ShopSite_Asp_Core_MVC_
             app.UseStatusCodePages();
 
             app.UseStaticFiles();
+
+            app.UseSession();
 
             app.UseRouting();
 

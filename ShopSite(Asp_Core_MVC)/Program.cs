@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace ShopSite_Asp_Core_MVC_
 {
     public class Program
-    {
+    {                   
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();
