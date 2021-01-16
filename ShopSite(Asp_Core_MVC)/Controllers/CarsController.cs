@@ -37,17 +37,20 @@ namespace ShopSite_Asp_Core_MVC_.Controllers
                 if (string.Equals("electro", category, StringComparison.OrdinalIgnoreCase))
                 {
                     cars = _getCars.GetAllCars.Where(i => i.Category.CategoryName == "Electromobiles");
+                    currentCategory = "Electromobiles";
                 }
                 else if(string.Equals("fuel", category, StringComparison.OrdinalIgnoreCase))
                 {
                     cars = _getCars.GetAllCars.Where(i => i.Category.CategoryName == "Classic automobiles");
+                    currentCategory = "Classic automobiles";
                 }
                 else if (string.Equals("retro", category, StringComparison.OrdinalIgnoreCase))
                 {
-                    cars = _getCars.GetAllCars.Where(i => i.Category.CategoryName == "Retro automobiles"); 
+                    cars = _getCars.GetAllCars.Where(i => i.Category.CategoryName == "Retro automobiles");
+                    currentCategory = "Retro automobiles";
                 }
 
-                currentCategory = _category;
+               // currentCategory = _category;
                
             }
             var car = new CarListModel
