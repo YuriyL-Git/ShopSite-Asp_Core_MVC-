@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using ShopSite_Asp_Core_MVC_.Data;
 using ShopSite_Asp_Core_MVC_.Data.Interfaces;
@@ -55,20 +56,24 @@ namespace ShopSite_Asp_Core_MVC_
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseDeveloperExceptionPage();
-
             app.UseStatusCodePages();
-
             app.UseStaticFiles();
-
             app.UseSession();
-
             app.UseRouting();
+
+       
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}"
+                );
+                endpoints.MapControllerRoute(
+                    name: "categoryFilter",
+                    pattern: "Car/{action}/{category?}", defaults: new {Controller="Car", action="List"}
+                );
+
             });
 
             using (var serviceScope = app.ApplicationServices.CreateScope())
