@@ -72,7 +72,7 @@ namespace ShopSite_Asp_Core_MVC_
                 );
                 endpoints.MapControllerRoute(
                     name: "categoryFilter",
-                    pattern: "Car/{action}/{category?}", defaults: new {Controller="Car", action= "CarListd" }
+                    pattern: "Car/{action=CarList}/{category?}", defaults: new {Controller="Car", action= "CarList" }
                 );
 
             });

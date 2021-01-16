@@ -20,5 +20,9 @@ namespace ShopSite_Asp_Core_MVC_.Data
         public DbSet<CarCategory> CarCaterory { get; set; }
 
         public DbSet<ShopCartItem> ShopCartItem { get; set; }
+
+        public DbSet<Order> Orders { get; set; }
+
+        public DbSet<OrderDetail> OrderDetails { get; set; }
     }
 }

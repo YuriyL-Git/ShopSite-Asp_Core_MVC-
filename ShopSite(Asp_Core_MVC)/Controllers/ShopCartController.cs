@@ -37,6 +37,7 @@ namespace ShopSite_Asp_Core_MVC_.Controllers
 
         public RedirectToActionResult addToCart(int id)
         {
+
             var item = _carRepository.GetAllCars.FirstOrDefault(i => i.Id == id);
 
             if (item != null)

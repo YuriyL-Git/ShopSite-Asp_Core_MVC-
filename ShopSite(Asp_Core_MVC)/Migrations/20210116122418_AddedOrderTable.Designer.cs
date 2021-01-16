@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ShopSite_Asp_Core_MVC_.Data;
 
 namespace ShopSite_Asp_Core_MVC_.Migrations
 {
     [DbContext(typeof(AppDBContent))]
-    partial class AppDBContentModelSnapshot : ModelSnapshot
+    [Migration("20210116122418_AddedOrderTable")]
+    partial class AddedOrderTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
